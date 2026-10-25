@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Collected accounts · Country Filter for X</title>
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { padding: 24px; max-width: 1100px; margin: 0 auto; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  header img { width: 32px; height: 32px; }
+  header h1 { font-size: 20px; flex: 1; }
+  .bar { display: grid; grid-template-columns: 1fr 240px auto; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .bar label.check { margin: 0; white-space: nowrap; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  th { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  td a { color: var(--text); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .handle { color: var(--muted); font-size: 13px; }
+  td.act { text-align: right; width: 120px; }
+  .done { color: var(--muted); font-size: 13px; }
+  #summary { margin-bottom: 10px; }
+  #note { font-size: 13px; margin-top: 14px; }
+  @media (max-width: 700px) { .bar { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="">
+    <h1>Collected accounts</h1>
+  </header>
+  <p class="muted" style="margin-top:-6px">Every account the extension has checked while you browsed X, with where X says it's based. Blocking here blocks it on your X account, so it also applies in the phone app.</p>
+
+  <div class="bar">
+    <input type="search" id="q" placeholder="Search name, handle or location">
+    <select id="loc"><option value="">All locations</option></select>
+    <label class="check"><input type="checkbox" id="onlyMatch"> Only my filtered places</label>
+  </div>
+  <div id="summary" class="muted"></div>
+  <table>
+    <thead><tr><th>Account</th><th>Based in</th><th>Connected via</th><th>Checked</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p id="note" class="muted">Block needs an X tab open in this browser. Blocks are one click each, on purpose, so X doesn't see it as mass blocking.</p>
+<script src="regions.js"></script>
+<script src="list.js"></script>
+</body>
+</html>

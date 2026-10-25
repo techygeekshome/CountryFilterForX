@@ -1,0 +1,48 @@
+.xcf-tag {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font: 500 12px/18px -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: rgb(113, 118, 123);
+  border: 1px solid rgba(113, 118, 123, 0.35);
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  pointer-events: auto;
+}
+
+article.xcf-blurred { position: relative; }
+article.xcf-blurred > *:not(.xcf-cover) {
+  filter: blur(9px);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+.xcf-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font: 600 14px/1.3 -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: rgb(231, 233, 234);
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 8px;
+}
+.xcf-cover button {
+  font: 700 13px/1 -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(15, 20, 25, 0.75);
+  color: #fff;
+  cursor: pointer;
+}
+.xcf-cover button:hover { background: rgba(29, 155, 240, 0.9); border-color: transparent; }

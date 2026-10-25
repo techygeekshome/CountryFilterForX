@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ui.css">
+<style>
+  body { width: 380px; padding: 14px 16px 16px; }
+  .head { display: flex; align-items: center; gap: 10px; }
+  .head img { width: 26px; height: 26px; }
+  .head h1 { flex: 1; }
+  .stats { margin-top: 8px; font-size: 12px; }
+  #selected:empty::after { content: "Nothing ticked yet. Pick a region or country below."; color: var(--muted); font-size: 13px; }
+  #selected .chip::after { content: " ✕"; opacity: .7; }
+  #results { margin-top: 6px; }
+  .foot { margin-top: 16px; display: flex; gap: 8px; }
+  .foot .btn { flex: 1; }
+  .counts .row { font-size: 13px; padding: 3px 0; }
+  .counts .bar { height: 6px; background: var(--chip); border-radius: 3px; flex: 1; overflow: hidden; }
+  .counts .bar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+  .counts .name { width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .counts .num { width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
+  .h2row { display: flex; align-items: center; justify-content: space-between; margin: 16px 0 8px; }
+  .h2row h2 { margin: 0; }
+  .h2row .seg { width: 150px; font-size: 12px; }
+  .h2row .seg button { padding: 3px 0; }
+  .warn { color: #ffd400; font-size: 12px; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <img src="icons/icon48.png" alt="">
+    <h1>Country Filter for X</h1>
+    <label class="switch" title="On / off"><input type="checkbox" id="enabled"><span></span></label>
+  </div>
+  <div class="stats muted" id="stats"></div>
+  <div class="warn" id="rl" hidden></div>
+
+  <h2 style="margin-top:12px">Seen on your feed</h2>
+  <div class="chips" id="seen"></div>
+
+  <div class="h2row">
+    <h2>Filtered by location</h2>
+    <div class="seg" id="range"><button data-r="today" class="on">Today</button><button data-r="total">All time</button></div>
+  </div>
+  <div class="counts" id="counts"></div>
+
+  <h2>Posts from ticked places</h2>
+  <div class="seg" id="mode">
+    <button data-mode="hide">Don't show</button>
+    <button data-mode="blur">Blur (click to view)</button>
+  </div>
+
+  <h2>Filtering</h2>
+  <div class="chips" id="selected"></div>
+
+  <h2>Regions</h2>
+  <div class="chips" id="regions"></div>
+
+  <h2>Add a country</h2>
+  <input type="search" id="search" placeholder="Type a country, e.g. Nigeria">
+  <div class="chips" id="results"></div>
+
+  <h2>Options</h2>
+  <label class="check"><input type="checkbox" id="useVia"> Also match "Connected via" (catches some VPN users)</label>
+  <label class="check"><input type="checkbox" id="showTags"> Show location tag next to names</label>
+  <h2>Never hide these accounts</h2>
+  <input type="text" id="allow" placeholder="@handle, @another">
+
+  <div class="foot">
+    <button class="btn" id="openList">Collected accounts</button>
+  </div>
+<script src="regions.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
