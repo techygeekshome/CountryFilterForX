@@ -4,6 +4,17 @@ Hide X posts and replies from the countries or regions you choose. X shows where
 
 **Download and full guide:** https://techygeekshome.info/browser-extensions/country-filter-for-x/
 
+[![Watch the Country Filter for X demo on YouTube](https://img.youtube.com/vi/Eq6_1ePb6TY/maxresdefault.jpg)](https://www.youtube.com/watch?v=Eq6_1ePb6TY)
+
+**Watch the demo:** https://www.youtube.com/watch?v=Eq6_1ePb6TY
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Location tags and hidden posts](screenshots/screenshot-1-feed.png) | ![Every place on your feed, with counts](screenshots/screenshot-2-popup.png) |
+| ![Filter counts per location](screenshots/screenshot-3-counts.png) | ![Collected accounts with one-click Block](screenshots/screenshot-4-list.png) |
+
 ## What it does
 
 - **Hides posts and replies** from accounts based in the countries or regions you tick. Or **blurs** them instead, with a Show button.
